@@ -1,5 +1,6 @@
 import type { GatsbyConfig } from "gatsby";
-
+import * as dotenv from 'dotenv'
+dotenv.config()
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `gatsby-typescript`,
@@ -9,11 +10,21 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: [{
+  plugins: [
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
+    'gatsby-plugin-postcss',
+    {
     resolve: 'gatsby-source-contentful',
     options: {
-      "accessToken": "TI82KYJD-tEvi5649UZ4fryHQpaLNspMI0YJMA41GG0",
-      "spaceId": ""
+      "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
+      "spaceId": process.env.CONTENTFUL_SPACE_ID
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", "gatsby-plugin-mdx", {
     resolve: 'gatsby-source-filesystem',

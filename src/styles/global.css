@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* make header main and footer take up exactly 100vh */
+*{
+  box-sizing: border-box;
+}
+
