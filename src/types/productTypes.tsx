@@ -2,6 +2,7 @@ export interface productType {
   id: string;
   price: number;
   title: string;
+  category: string;
   description: {
     description: string;
   };
@@ -10,6 +11,10 @@ export interface productType {
       url: string;
     };
   };
+}
+
+export interface productCardProps {
+  product: productType;
 }
 
 export interface allProductsType {

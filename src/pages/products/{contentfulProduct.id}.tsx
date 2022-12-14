@@ -28,9 +28,9 @@ export default function Product({ data }: singleProductType) {
       <section className="flex flex-col items-center justify-center gap-5 ">
         <article className="flex flex-col items-center w-2/3 text-center rounded bg-slate-300 m-9 p-9">
           <h1 className="m-1 text-3xl">{product.title}</h1>
-          <img src={product.image.file.url} alt={product.title} width="70%"/>
+          <img className="rounded" src={product.image.file.url} alt={product.title} width="70%"/>
           <p className="m-1 text-xl text-red-700">$ {product.price}</p>
-          <p className="m-1 text-xl">{product.description.description}</p>
+          <p className="m-1 text-xl text-left">{product.description.description}</p>
         </article>
       </section>
     </Layout>

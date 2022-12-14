@@ -1,7 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import { productCardProps} from "../types/productTypes";
 
-export default function ProductCard({ product }:any) {
+export default function ProductCard({ product }: productCardProps) {
+  console.log(product)
   return (
       <Link to={product.id}>
     <div className="flex-col items-center pb-4 text-center transition-all bg-gray-800 rounded w-80 hover:scale-[1.05]">

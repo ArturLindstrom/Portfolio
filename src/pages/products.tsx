@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import ProductCard from "../components/ProductCard";
-import { allProductsType } from "../types/productTypes";
+import { allProductsType, productType } from "../types/productTypes";
 import Layout from "../components/Layout";
 
 export const allProductsQuery = graphql`
@@ -12,6 +12,7 @@ export const allProductsQuery = graphql`
           id
           price
           title
+          category
           description {
             description
           }
@@ -27,7 +28,13 @@ export const allProductsQuery = graphql`
 `;
 
 export default function Products({ data }: allProductsType) {
-  const products = data.allContentfulProduct.edges;
+  const [category, setCategory] = React.useState(null);
+  // filter products by category if no category is selected, show all products
+  const products = category
+    ? data.allContentfulProduct.edges.filter(
+        (product: any) => product.node.category == category
+      )
+    : data.allContentfulProduct.edges;
   return (
     <Layout>
       <section className="grid min-h-screen grid-cols-3 gap-6 py-6 place-items-center">
