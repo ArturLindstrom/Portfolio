@@ -7,6 +7,6 @@
   box-sizing: border-box;
 }
 
-.slide-in-bottom{animation:slide-in-bottom 1s cubic-bezier(.25,.46,.45,.94) both}
+.text-focus-in{animation:text-focus-in 1s cubic-bezier(.55,.085,.68,.53) both}
 
-@keyframes slide-in-bottom{0%{transform:translateY(1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
+@keyframes text-focus-in{0%{filter:blur(12px);opacity:0}100%{filter:blur(0);opacity:1}}
