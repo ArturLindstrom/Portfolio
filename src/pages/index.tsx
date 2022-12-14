@@ -24,8 +24,8 @@ export default function IndexPage({ data }: frontPageType) {
   const frontPage = data.allContentfulHomePage.edges[0].node
   return (
     <Layout>
-      <section className='flex flex-col items-center justify-start min-h-[80vh] gap-5 bg-bottom bg-no-repeat bg-cover' style={{backgroundImage: `url(${frontPage.heroImage.file.url})`}}>
-          <h1 className="font-bold mt-14 text-7xl text-slate-200">{frontPage.welcomeMessage}</h1>
+      <section className='flex flex-col items-center justify-start min-h-[80vh] gap-5 bg-bottom bg-no-repeat bg-cover overflow-hidden' style={{backgroundImage: `url(${frontPage.heroImage.file.url})`}}>
+          <h1 className="font-bold mt-14 text-7xl text-slate-200 slide-in-bottom">{frontPage.welcomeMessage}</h1>
       </section>
     </Layout>
   )
