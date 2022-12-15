@@ -1,5 +1,4 @@
-
-export interface frontPageType  {
+export interface frontPageType {
   data: {
     allContentfulHomePage: {
       edges: {
@@ -14,5 +13,4 @@ export interface frontPageType  {
       }[];
     };
   };
-};
-
+}

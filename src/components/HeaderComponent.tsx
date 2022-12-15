@@ -18,7 +18,10 @@ export default function Header() {
   `);
   return (
     <header className="flex flex-row items-center justify-between gap-5 h-[10vh] bg-slate-800 p-4">
-      <Link to="/" className="text-3xl transition-all text-slate-200 hover:text-cyan-600 ">
+      <Link
+        to="/"
+        className="text-3xl transition-all text-slate-200 hover:text-cyan-600 "
+      >
         Blobshop
       </Link>
       <nav className="flex flex-row items-center justify-between gap-5">

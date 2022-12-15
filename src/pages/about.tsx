@@ -29,7 +29,7 @@ export default function About({ data }: AboutType) {
           <h1 className="m-1 text-3xl text-center">About us</h1>
           <div className="m-1 text-xl text-left">
             {/* @ts-ignore */}
-          {renderRichText(about)}
+            {renderRichText(about)}
           </div>
         </article>
       </section>

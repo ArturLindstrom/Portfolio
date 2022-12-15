@@ -19,21 +19,16 @@ export interface productCardProps {
 
 export interface allProductsType {
   data: {
-  allContentfulProduct: {
-    edges: {
-      node: 
-        productType;
-        
-    }[];
+    allContentfulProduct: {
+      edges: {
+        node: productType;
+      }[];
+    };
   };
-};
 }
 
 export interface singleProductType {
   data: {
-    contentfulProduct: 
-      productType;
+    contentfulProduct: productType;
   };
 }
-
-
