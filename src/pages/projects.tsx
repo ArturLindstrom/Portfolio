@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
-import { AllprojectsType } from "../../types/projectTypes";
-import ProjectCard from "../../components/ProjectCard";
-import Layout from "../../components/Layout";
-import CategorySelect from "../../components/CategorySelect";
+import { AllprojectsType } from "../types/projectTypes";
+import ProjectCard from "../components/ProjectCard";
+import Layout from "../components/Layout";
+import CategorySelect from "../components/CategorySelect";
 
 export const query = graphql`
   query {

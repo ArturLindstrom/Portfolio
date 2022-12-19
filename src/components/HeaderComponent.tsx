@@ -16,7 +16,6 @@ export default function HeaderComponent() {
       }
     }
   `);
-
   return (
     <header className="flex items-center justify-between p-4 text-white bg-[#c62368] h-[10vh] max-w-full">
       <Link to="/">
@@ -25,7 +24,7 @@ export default function HeaderComponent() {
       <nav className="flex items-center justify-between space-x-4">
         <Link to="/projects">Projects</Link>
         {data.allContentfulPage.edges.map((link: LinkType) => (
-          <Link to={link.node.slug} key={link.node.slug}>
+          <Link to={`/${link.node.slug}`} key={link.node.slug}>
             {link.node.title}
           </Link>
         ))}
