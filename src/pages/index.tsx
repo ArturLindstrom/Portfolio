@@ -14,6 +14,7 @@ export const query = graphql`
             }
           }
           welcomeMessage
+          paragraph
         }
       }
     }
@@ -31,6 +32,9 @@ export default function IndexPage({ data }: frontPageType) {
         <h1 className="font-bold mt-14 text-7xl text-slate-200 text-focus-in">
           {frontPage.welcomeMessage}
         </h1>
+        <p className="text-2xl text-center text-slate-200 text-focus-in">
+          {frontPage.paragraph}
+        </p>
       </section>
     </Layout>
   );

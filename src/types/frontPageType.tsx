@@ -9,6 +9,7 @@ export interface frontPageType {
             };
           };
           welcomeMessage: string;
+          paragraph: string;
         };
       }[];
     };

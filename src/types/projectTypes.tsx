@@ -4,6 +4,8 @@ export interface ProjectType {
   shortDescription: string;
   category: string[];
   longDescription?: string;
+  url?: string;
+  githubUrl: string;
   screenshots: {
     file: {
       url: string;
