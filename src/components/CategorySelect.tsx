@@ -7,6 +7,16 @@ categorySelect.propTypes = {
 };
 
 export default function categorySelect({ onCategoryChange }: any) {
+  // get each distinct category from the projects
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulProject {
+        distinct(field: { category: SELECT })
+      }
+    }
+  `);
+  console.log(data);
+
   const [category, setCategory] = React.useState<string>();
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -19,6 +29,9 @@ export default function categorySelect({ onCategoryChange }: any) {
       <label className="mr-2 text-white">Filter by category:</label>
       <select className="text-white bg-gray-800" onChange={handleChange}>
         <option value={""}>All</option>
+        {data.allContentfulProject.distinct.map((project: any) => (
+          <option value={project}>{project}</option>
+        ))}
       </select>
     </div>
   );
