@@ -3,39 +3,29 @@ import { Link, useStaticQuery } from "gatsby";
 import { graphql } from "gatsby";
 import { LinkType } from "../types/linkType";
 
-export default function Header() {
+export default function HeaderComponent() {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulNavLink(sort: { createdAt: ASC }) {
+      allContentfulPage {
         edges {
           node {
-            link
-            path
+            title
+            slug
           }
         }
       }
     }
   `);
+
   return (
-    <header className="flex flex-row items-center justify-between gap-5 h-[10vh] bg-slate-800 p-4">
-      <Link
-        to="/"
-        className="text-3xl transition-all text-slate-200 hover:text-cyan-600 "
-      >
-        Blobshop
+    <header className="flex items-center justify-between p-4 text-white bg-[#c62368] h-[10vh]">
+      <Link to="/">
+        <h1 className="text-4xl font-bold">Bröli</h1>
       </Link>
-      <nav className="flex flex-row items-center justify-between gap-5">
-        {data.allContentfulNavLink.edges.map((link: LinkType) => (
-          <Link
-            to={link.node.path}
-            key={link.node.path}
-            className="text-xl transition-all text-slate-200 hover:text-cyan-600 "
-            activeStyle={{
-              color: "rgb(8 145 178)",
-              textDecoration: "underline",
-            }}
-          >
-            {link.node.link}
+      <nav className="flex items-center justify-between space-x-4">
+        {data.allContentfulPage.edges.map((link: LinkType) => (
+          <Link to={link.node.slug} key={link.node.slug}>
+            {link.node.title}
           </Link>
         ))}
       </nav>

@@ -1,6 +1,6 @@
 export type LinkType = {
   node: {
-    link: string;
-    path: string;
+    title: string;
+    slug: string;
   };
 };
