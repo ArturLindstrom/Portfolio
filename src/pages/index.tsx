@@ -26,10 +26,10 @@ export default function IndexPage({ data }: frontPageType) {
   return (
     <Layout>
       <section
-        className="flex flex-col items-center justify-start min-h-[80vh] gap-5 bg-bottom bg-no-repeat bg-cover overflow-hidden"
+        className="flex flex-col items-center justify-start min-h-[80vh] gap-5 bg-bottom bg-no-repeat bg-cover overflow-hidden w-full"
         style={{ backgroundImage: `url(${frontPage.heroImage.file.url})` }}
       >
-        <h1 className="font-bold mt-14 text-7xl text-slate-200 text-focus-in">
+        <h1 className="font-bold text-center mt-14 text-7xl text-slate-200 text-focus-in">
           {frontPage.welcomeMessage}
         </h1>
         <p className="text-2xl text-center text-slate-200 text-focus-in">

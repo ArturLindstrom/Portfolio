@@ -3,8 +3,12 @@ export interface PageType {
     contentfulPage: {
       title: string;
       slug: string;
-      body: {
-        raw: string;
+      links?: string[];
+      body: any;
+      image?: {
+        file: {
+          url: string;
+        };
       };
     };
   };

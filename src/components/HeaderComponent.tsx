@@ -23,6 +23,8 @@ export default function HeaderComponent() {
       </Link>
       <nav className="flex items-center justify-between space-x-4">
         <Link to="/projects">Projects</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
         {data.allContentfulPage.edges.map((link: LinkType) => (
           <Link to={`/${link.node.slug}`} key={link.node.slug}>
             {link.node.title}

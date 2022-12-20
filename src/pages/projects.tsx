@@ -30,7 +30,7 @@ export default function Projects({ data }: AllprojectsType) {
   const changeCategory = (category: string) => {
     setCategory(category);
   };
-
+  // checks if category is empty, if it is, return all projects, if not, return projects that match the category
   const projects = category
     ? data.allContentfulProject.edges.filter((project) =>
         project.node.category.includes(category)
@@ -43,7 +43,7 @@ export default function Projects({ data }: AllprojectsType) {
         All Projects
       </h1>
       <CategorySelect onCategoryChange={changeCategory} />
-      <section className="flex flex-col items-center gap-6">
+      <section className="flex flex-col items-center">
         {projects.map((project) => (
           <ProjectCard project={project.node} />
         ))}

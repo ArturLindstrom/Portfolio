@@ -1,6 +1,6 @@
-export interface AboutType {
+export interface ContactType {
   data: {
-    allContentfulAboutPage: {
+    allContentfulContactPage: {
       edges: {
         node: {
           title: string;

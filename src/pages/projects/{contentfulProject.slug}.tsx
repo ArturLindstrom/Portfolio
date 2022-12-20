@@ -27,23 +27,19 @@ export default function project({ data }: SingleProjectType) {
     <Layout>
       <section className="flex flex-col items-center justify-center gap-5 ">
         <article className="flex flex-col items-center w-2/3 text-center bg-gray-800 rounded m-9 p-9">
-          <h1 className="m-1 mb-2 text-3xl font-bold text-slate-200">
+          <h1 className="mb-2 text-3xl font-bold text-slate-200">
             {project.title}
           </h1>
-          <p className="m-1 text-xl text-left text-slate-200">
+          <div className="flex justify-center gap-6">
+            <a href={project.githubUrl}>Github</a>
+            {project.url ? <a href={project.url}>Live Site</a> : null}
+          </div>
+          <p className="m-1 text-xl text-center text-slate-200">
             {project.shortDescription}
           </p>
-          <a href={project.githubUrl}>Github</a>
-          {/* if project.url exists write it out in an a tag */}
-          {project.url ? <a href={project.url}>Live Site</a> : null}
-          <div className="flex flex-row items-center justify-center gap-5">
+          <div className="flex flex-col items-center justify-center gap-5">
             {project.screenshots.map((screenshot) => (
-              <img
-                className="rounded"
-                src={screenshot.file.url}
-                alt={project.title}
-                width="70%"
-              />
+              <img src={screenshot.file.url} alt={project.title} width="70%" />
             ))}
           </div>
         </article>
