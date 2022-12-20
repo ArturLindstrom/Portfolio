@@ -13,5 +13,15 @@ export interface ContactType {
         };
       }[];
     };
+    allContentfulLink: LinkType;
   };
+}
+
+export interface LinkType {
+  edges: {
+    node: {
+      title: string;
+      url: string;
+    };
+  }[];
 }

@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { ContactType } from "../types/contactTypes";
 import Layout from "../components/Layout";
+import { LinkType } from "../types/linkType";
 
 export const query = graphql`
   query {
@@ -21,11 +22,20 @@ export const query = graphql`
         }
       }
     }
+    allContentfulLink {
+      edges {
+        node {
+          title
+          url
+        }
+      }
+    }
   }
 `;
 
 export default function Contact({ data }: ContactType) {
   const contact = data.allContentfulContactPage.edges[0].node;
+  const links = data.allContentfulLink.edges;
   return (
     <Layout>
       <section className="flex flex-col items-center w-2/3 p-6 rounded bg-slate-700">
@@ -35,6 +45,13 @@ export default function Contact({ data }: ContactType) {
         ) : null}
         <div className="text-slate-200 [&>p]:mt-4">
           {renderRichText(contact.body)}
+          {links.map((link: LinkType) => {
+            return (
+              <div key={link.node.title}>
+                <a href={link.node.url}>{link.node.title}</a>
+              </div>
+            );
+          })}
         </div>
       </section>
     </Layout>
