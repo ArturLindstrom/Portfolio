@@ -45,13 +45,17 @@ export default function Contact({ data }: ContactType) {
         ) : null}
         <div className="text-slate-200 [&>p]:mt-4">
           {renderRichText(contact.body)}
-          {links.map((link: LinkType) => {
-            return (
-              <div key={link.node.title}>
-                <a href={link.node.url}>{link.node.title}</a>
-              </div>
-            );
-          })}
+        </div>
+        <div className="flex items-center gap-4 mt-4">
+          {links.map((link: LinkType) => (
+            <a
+              key={link.node.title}
+              href={link.node.url}
+              className="text-slate-200"
+            >
+              {link.node.title}
+            </a>
+          ))}
         </div>
       </section>
     </Layout>

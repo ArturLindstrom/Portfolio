@@ -31,7 +31,11 @@ export default function About({ data }: AboutType) {
       <section className="flex flex-col items-center w-2/3 p-6 rounded bg-slate-700">
         <h1 className="text-3xl text-slate-200">{about.title}</h1>
         {about.image ? (
-          <img src={about.image.file.url} alt={about.title} />
+          <img
+            className="w-[150px]"
+            src={about.image.file.url}
+            alt={about.title}
+          />
         ) : null}
         <div className="text-slate-200 [&>p]:mt-4">
           {renderRichText(about.body)}
