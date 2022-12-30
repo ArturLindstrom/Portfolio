@@ -1,6 +1,9 @@
 export type LinkType = {
-  node: {
-    title: string;
-    slug: string;
-  };
+  title: string;
+  slug?: string;
+  url: string;
 };
+
+export interface DynamicLinkType {
+  node: LinkType;
+}

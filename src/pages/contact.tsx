@@ -41,13 +41,17 @@ export default function Contact({ data }: ContactType) {
       <section className="flex flex-col items-center w-2/3 p-6 rounded bg-slate-700">
         <h1 className="text-3xl text-slate-200">{contact.title}</h1>
         {contact.image ? (
-          <img src={contact.image.file.url} alt={contact.title} />
+          <img
+            className="w-[150px]"
+            src={contact.image.file.url}
+            alt={contact.title}
+          />
         ) : null}
         <div className="text-slate-200 [&>p]:mt-4">
           {renderRichText(contact.body)}
         </div>
         <div className="flex items-center gap-4 mt-4">
-          {links.map((link: LinkType) => (
+          {links.map((link: any) => (
             <a
               key={link.node.title}
               href={link.node.url}

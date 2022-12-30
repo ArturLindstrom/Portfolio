@@ -36,7 +36,8 @@ const NotFoundPage: React.FC<PageProps> = () => {
             Try creating a page in <code style={codeStyles}>src/pages/</code>.
             <br />
           </>
-        ) : null}
+        ) : //
+        null}
         <br />
         <Link to="/">Go home</Link>.
       </p>
