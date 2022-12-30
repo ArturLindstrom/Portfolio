@@ -23,21 +23,7 @@ export default function HeaderComponent() {
         <h1 className="text-4xl font-bold">Home</h1>
       </Link>
       <nav className="flex items-center justify-between space-x-4">
-        <BurgerMenu
-          links={[
-            { title: "Home", url: "/" },
-            { title: "About", url: "/about" },
-            { title: "Contact", url: "/contact" },
-          ]}
-        ></BurgerMenu>
-        {/* <Link to="/projects">Projects</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link> */}
-        {data.allContentfulPage.edges.map((link: DynamicLinkType) => (
-          <Link to={`/${link.node.slug}`} key={link.node.slug}>
-            {link.node.title}
-          </Link>
-        ))}
+        <BurgerMenu />
       </nav>
     </header>
   );
