@@ -18,7 +18,7 @@ export default function BurgerMenu() {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   function toggleMenu() {
-    if (menuOpen) {
+    if (menuOpen !== true) {
       const sideMenu = document.getElementById("side-menu");
       console.log("menu is open");
       sideMenu?.classList.remove("right-[-250px]");
@@ -42,27 +42,30 @@ export default function BurgerMenu() {
         className="fixed top-0 right-[-250px] w-[240px] h-screen z-50 bg-gray-700 p-5
       flex flex-col space-y-5 text-white duration-300"
       >
-        <a
-          href="#"
-          className="text-4xl text-right"
+        <span
+          className="text-4xl text-right cursor-pointer"
           onClick={() => toggleMenu()}
         >
           &times;
-        </a>
-        <Link className="hover:text-amber-500" to="/">
+        </span>
+        <Link className="hover:text-[#c62368]" to="/">
           Home
         </Link>
-        <Link className="hover:text-amber-500" to="/projects">
+        <Link className="hover:text-[#c62368]" to="/projects">
           Projects
         </Link>
-        <Link className="hover:text-amber-500" to="/contact">
+        <Link className="hover:text-[#c62368]" to="/contact">
           Contact
         </Link>
-        <Link className="hover:text-amber-500" to="/about">
+        <Link className="hover:text-[#c62368]" to="/about">
           About
         </Link>
         {data.allContentfulPage.edges.map((link: DynamicLinkType) => (
-          <Link to={`/${link.node.slug}`} key={link.node.slug}>
+          <Link
+            className="hover:text-[#c62368]"
+            to={`/${link.node.slug}`}
+            key={link.node.slug}
+          >
             {link.node.title}
           </Link>
         ))}
