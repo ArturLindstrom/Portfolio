@@ -31,8 +31,14 @@ export default function project({ data }: SingleProjectType) {
             {project.title}
           </h1>
           <div className="flex justify-center gap-6">
-            <a href={project.githubUrl}>Github</a>
-            {project.url ? <a href={project.url}>Live Site</a> : null}
+            <a className="text-primary font-bold" href={project.githubUrl}>
+              Github
+            </a>
+            {project.url ? (
+              <a className="text-primary font-bold" href={project.url}>
+                Live Site
+              </a>
+            ) : null}
           </div>
           <p className="m-1 text-xl text-center text-slate-200">
             {project.shortDescription}

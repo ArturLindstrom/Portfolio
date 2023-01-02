@@ -43,7 +43,7 @@ export default function Projects({ data }: AllprojectsType) {
         All Projects
       </h1>
       <CategorySelect onCategoryChange={changeCategory} />
-      <section className="flex flex-col items-center">
+      <section className="flex flex-col items-center gap-4">
         {projects.map((project) => (
           <ProjectCard project={project.node} />
         ))}

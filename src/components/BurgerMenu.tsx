@@ -39,7 +39,7 @@ export default function BurgerMenu() {
       </span>
       <div
         id="side-menu"
-        className="fixed top-0 right-[-250px] w-[240px] h-screen z-50 bg-gray-700 p-5
+        className="fixed top-0 right-[-250px] w-[240px] h-screen z-50 bg-slate-800 p-5
       flex flex-col space-y-5 text-white duration-300"
       >
         <span
@@ -48,21 +48,21 @@ export default function BurgerMenu() {
         >
           &times;
         </span>
-        <Link className="hover:text-[#c62368]" to="/">
+        <Link className="hover:text-primary" to="/">
           Home
         </Link>
-        <Link className="hover:text-[#c62368]" to="/projects">
+        <Link className="hover:text-primary" to="/projects">
           Projects
         </Link>
-        <Link className="hover:text-[#c62368]" to="/contact">
+        <Link className="hover:text-primary" to="/contact">
           Contact
         </Link>
-        <Link className="hover:text-[#c62368]" to="/about">
+        <Link className="hover:text-primary" to="/about">
           About
         </Link>
         {data.allContentfulPage.edges.map((link: DynamicLinkType) => (
           <Link
-            className="hover:text-[#c62368]"
+            className="hover:text-primary"
             to={`/${link.node.slug}`}
             key={link.node.slug}
           >
