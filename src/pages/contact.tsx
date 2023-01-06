@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { ContactType } from "../types/contactTypes";
 import Layout from "../components/Layout";
-import { LinkType } from "../types/linkType";
+import { DynamicLinkType } from "../types/linkType";
 
 export const query = graphql`
   query {
@@ -51,7 +51,7 @@ export default function Contact({ data }: ContactType) {
           {renderRichText(contact.body)}
         </div>
         <div className="flex items-center gap-4 mt-4">
-          {links.map((link: any) => (
+          {links.map((link: DynamicLinkType) => (
             <a
               key={link.node.title}
               href={link.node.url}
