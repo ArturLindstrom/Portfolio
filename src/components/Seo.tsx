@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import { SeoProps } from "../types/SeoTypes";
 
 export default function Seo() {
   const data = useStaticQuery(graphql`
@@ -18,6 +17,7 @@ export default function Seo() {
   `);
 
   const meta = data?.site?.siteMetadata;
+
   return (
     <Helmet>
       <title>{meta.title}</title>

@@ -48,16 +48,25 @@ export default function BurgerMenu() {
         >
           &times;
         </span>
-        <Link className="hover:text-primary" to="/">
+        <Link className="transition-all duration-300 hover:text-primary" to="/">
           Home
         </Link>
-        <Link className="hover:text-primary" to="/projects">
+        <Link
+          className="hover:text-primary transition-all-duration-300"
+          to="/projects"
+        >
           Projects
         </Link>
-        <Link className="hover:text-primary" to="/contact">
+        <Link
+          className="hover:text-primary transition-all-duration-300"
+          to="/contact"
+        >
           Contact
         </Link>
-        <Link className="hover:text-primary" to="/about">
+        <Link
+          className="hover:text-primary transition-all-duration-300"
+          to="/about"
+        >
           About
         </Link>
         {data.allContentfulPage.edges.map((link: DynamicLinkType) => (

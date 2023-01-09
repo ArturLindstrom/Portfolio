@@ -55,7 +55,7 @@ export default function Contact({ data }: ContactType) {
             <a
               key={link.node.title}
               href={link.node.url}
-              className="text-slate-200"
+              className="font-bold underline transition-all duration-300 text-primary hover:text-slate-200"
             >
               {link.node.title}
             </a>
