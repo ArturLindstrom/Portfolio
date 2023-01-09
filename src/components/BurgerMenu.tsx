@@ -17,15 +17,15 @@ export default function BurgerMenu() {
   `);
   const [menuOpen, setMenuOpen] = React.useState(false);
 
-  const sideMenu = document.getElementById("side-menu");
-
   function toggleMenu() {
     if (menuOpen !== true) {
+      const sideMenu = document.getElementById("side-menu");
       console.log("menu is open");
       sideMenu?.classList.remove("right-[-250px]");
       sideMenu?.classList.add("right-0");
       setMenuOpen(!menuOpen);
     } else {
+      const sideMenu = document.getElementById("side-menu");
       sideMenu?.classList.remove("right-0");
       sideMenu?.classList.add("right-[-250px]");
       setMenuOpen(!menuOpen);
