@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { SingleProjectType } from "../../types/projectTypes";
 import Layout from "../../components/Layout";
-
+import FsLightbox from "fslightbox-react";
 export const query = graphql`
   query ($id: String!) {
     contentfulProject(id: { eq: $id }) {
@@ -22,7 +22,23 @@ export const query = graphql`
 
 export default function project({ data }: SingleProjectType) {
   const project = data.contentfulProject;
-  console.log(project.githubUrl);
+  const [lightboxController, setLightboxController] = React.useState({
+    toggler: false,
+    slide: 1,
+  });
+  // create a array of all the screenshots
+  const screenshots = project.screenshots.map(
+    (screenshot) => screenshot.file.url
+  );
+
+  function openLightboxOnSlide(number: number) {
+    console.log(number);
+    setLightboxController({
+      toggler: !lightboxController.toggler,
+      slide: number,
+    });
+  }
+
   return (
     <Layout>
       <section className="flex flex-col items-center justify-center gap-5 ">
@@ -31,11 +47,11 @@ export default function project({ data }: SingleProjectType) {
             {project.title}
           </h1>
           <div className="flex justify-center gap-6">
-            <a className="text-primary font-bold" href={project.githubUrl}>
+            <a className="font-bold text-primary" href={project.githubUrl}>
               Github
             </a>
             {project.url ? (
-              <a className="text-primary font-bold" href={project.url}>
+              <a className="font-bold text-primary" href={project.url}>
                 Live Site
               </a>
             ) : null}
@@ -44,9 +60,22 @@ export default function project({ data }: SingleProjectType) {
             {project.shortDescription}
           </p>
           <div className="flex flex-col items-center justify-center gap-5">
-            {project.screenshots.map((screenshot) => (
-              <img src={screenshot.file.url} alt={project.title} width="70%" />
+            {project.screenshots.map((screenshot, index) => (
+              <img
+                className="cursor-pointer"
+                key={index}
+                src={screenshot.file.url}
+                alt={project.title}
+                width="70%"
+                onClick={() => openLightboxOnSlide(index + 1)}
+              />
             ))}
+
+            <FsLightbox
+              toggler={lightboxController.toggler}
+              sources={screenshots}
+              slide={lightboxController.slide}
+            ></FsLightbox>
           </div>
         </article>
       </section>
