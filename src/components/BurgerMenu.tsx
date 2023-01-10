@@ -16,18 +16,17 @@ export default function BurgerMenu() {
     }
   `);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const sideMenu = React.useRef<HTMLDivElement>(null);
 
   function toggleMenu() {
     if (menuOpen !== true) {
-      const sideMenu = document.getElementById("side-menu");
       console.log("menu is open");
-      sideMenu?.classList.remove("right-[-250px]");
-      sideMenu?.classList.add("right-0");
+      sideMenu?.current?.classList.remove("right-[-250px]");
+      sideMenu?.current?.classList.add("right-0");
       setMenuOpen(!menuOpen);
     } else {
-      const sideMenu = document.getElementById("side-menu");
-      sideMenu?.classList.remove("right-0");
-      sideMenu?.classList.add("right-[-250px]");
+      sideMenu?.current?.classList.remove("right-0");
+      sideMenu?.current?.classList.add("right-[-250px]");
       setMenuOpen(!menuOpen);
     }
   }
@@ -38,6 +37,7 @@ export default function BurgerMenu() {
         &#9776;
       </span>
       <div
+        ref={sideMenu}
         id="side-menu"
         className="fixed top-0 right-[-250px] w-[240px] h-screen z-50 bg-slate-800 p-5
       flex flex-col space-y-5 text-white duration-300"

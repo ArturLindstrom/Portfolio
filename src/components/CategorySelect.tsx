@@ -30,7 +30,9 @@ export default function categorySelect({ onCategoryChange }: any) {
       <select className="text-white bg-gray-800" onChange={handleChange}>
         <option value={""}>All</option>
         {data.allContentfulProject.distinct.map((project: any) => (
-          <option value={project}>{project}</option>
+          <option key={project} value={project}>
+            {project}
+          </option>
         ))}
       </select>
     </div>
