@@ -23,7 +23,7 @@ export const query = graphql`
 
 export default function page({ data }: PageType) {
   const page = data.contentfulPage;
-  console.log(data, "page");
+
   return (
     <Layout>
       <section className="flex flex-col items-center w-2/3 p-6 rounded bg-slate-700">

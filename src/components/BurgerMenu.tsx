@@ -13,14 +13,22 @@ export default function BurgerMenu() {
           }
         }
       }
+      allContentfulNavLink(sort: { createdAt: ASC }) {
+        edges {
+          node {
+            path
+            name
+          }
+        }
+      }
     }
   `);
   const [menuOpen, setMenuOpen] = React.useState(false);
   const sideMenu = React.useRef<HTMLDivElement>(null);
+  const navLinks = data.allContentfulNavLink.edges;
 
   function toggleMenu() {
     if (menuOpen !== true) {
-      console.log("menu is open");
       sideMenu?.current?.classList.remove("right-[-250px]");
       sideMenu?.current?.classList.add("right-0");
       setMenuOpen(!menuOpen);
@@ -33,7 +41,7 @@ export default function BurgerMenu() {
 
   return (
     <div>
-      <span className="text-4xl cursor-pointer" onClick={() => toggleMenu()}>
+      <span className="text-4xl cursor-pointer" onClick={toggleMenu}>
         &#9776;
       </span>
       <div
@@ -48,27 +56,17 @@ export default function BurgerMenu() {
         >
           &times;
         </span>
-        <Link className="transition-all duration-300 hover:text-primary" to="/">
-          Home
-        </Link>
-        <Link
-          className="hover:text-primary transition-all-duration-300"
-          to="/projects"
-        >
-          Projects
-        </Link>
-        <Link
-          className="hover:text-primary transition-all-duration-300"
-          to="/contact"
-        >
-          Contact
-        </Link>
-        <Link
-          className="hover:text-primary transition-all-duration-300"
-          to="/about"
-        >
-          About
-        </Link>
+
+        {navLinks.map((link: any) => (
+          <Link
+            className="transition-all duration-300 hover:text-primary"
+            to={link.node.path}
+            key={link.node.name}
+            onClick={toggleMenu}
+          >
+            {link.node.name}
+          </Link>
+        ))}
         {data.allContentfulPage.edges.map((link: DynamicLinkType) => (
           <Link
             className="hover:text-primary"

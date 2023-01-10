@@ -26,13 +26,14 @@ export default function project({ data }: SingleProjectType) {
     toggler: false,
     slide: 1,
   });
-  // create a array of all the screenshots
+
+  const siteUrl = `https://blobbo.netlify.app/projects/${project.slug}`;
+
   const screenshots = project.screenshots.map(
     (screenshot) => screenshot.file.url
   );
 
   function openLightboxOnSlide(number: number) {
-    console.log(number);
     setLightboxController({
       toggler: !lightboxController.toggler,
       slide: number,
@@ -40,7 +41,11 @@ export default function project({ data }: SingleProjectType) {
   }
 
   return (
-    <Layout>
+    <Layout
+      title={project.title}
+      description={project.shortDescription}
+      siteUrl={siteUrl}
+    >
       <section className="flex flex-col items-center justify-center gap-5 ">
         <article className="flex flex-col items-center w-2/3 text-center bg-gray-800 rounded m-9 p-9">
           <h1 className="mb-2 text-3xl font-bold text-slate-200">

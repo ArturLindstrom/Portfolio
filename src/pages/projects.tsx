@@ -38,14 +38,19 @@ export default function Projects({ data }: AllprojectsType) {
     : data.allContentfulProject.edges;
 
   return (
-    <Layout>
+    <Layout
+      title="My Projects"
+      description="All my current projects"
+      siteUrl="https://blobbo.netlify.app/projects"
+      image="https://i.imgur.com/Zb7C2v3.png"
+    >
       <h1 className="mb-4 text-3xl font-bold text-center text-slate-200">
         All Projects
       </h1>
       <CategorySelect onCategoryChange={changeCategory} />
       <section className="flex flex-col items-center gap-4">
-        {projects.map((project) => (
-          <ProjectCard project={project.node} />
+        {projects.map((project, index) => (
+          <ProjectCard project={project.node} key={index} />
         ))}
       </section>
     </Layout>

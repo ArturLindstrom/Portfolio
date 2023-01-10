@@ -37,7 +37,11 @@ export default function Contact({ data }: ContactType) {
   const contact = data.allContentfulContactPage.edges[0].node;
   const links = data.allContentfulLink.edges;
   return (
-    <Layout>
+    <Layout
+      title="Contact Page"
+      description="How to contact me."
+      siteUrl="https://blobbo.netlify.app/contact"
+    >
       <section className="flex flex-col items-center w-2/3 p-6 rounded bg-slate-700">
         <h1 className="text-3xl text-slate-200">{contact.title}</h1>
         {contact.image ? (
