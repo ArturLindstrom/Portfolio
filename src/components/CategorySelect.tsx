@@ -15,7 +15,6 @@ export default function categorySelect({ onCategoryChange }: any) {
       }
     }
   `);
-  console.log(data);
 
   const [category, setCategory] = React.useState<string>();
 

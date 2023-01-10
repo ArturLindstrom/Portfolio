@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link, useStaticQuery } from "gatsby";
 import { graphql } from "gatsby";
-import { DynamicLinkType, LinkType } from "../types/linkType";
 import BurgerMenu from "./BurgerMenu";
 
 export default function HeaderComponent() {
