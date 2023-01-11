@@ -6,7 +6,11 @@ categorySelect.propTypes = {
   onCategoryChange: PropTypes.func,
 };
 
-export default function categorySelect({ onCategoryChange }: any) {
+export default function categorySelect({
+  onCategoryChange,
+}: {
+  onCategoryChange: Function;
+}) {
   // get each distinct category from the projects
   const data = useStaticQuery(graphql`
     query {

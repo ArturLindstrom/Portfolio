@@ -12,6 +12,7 @@ export default function Seo(props: SeoProps) {
           description
           siteUrl
           image
+          keywords
         }
       }
     }
@@ -23,6 +24,7 @@ export default function Seo(props: SeoProps) {
   const description = props.description || defaults.description;
   const image = props.image || defaults.image;
   const url = props.siteUrl || defaults.siteUrl;
+  const keywords = props.keywords || defaults.keywords;
 
   return (
     <Helmet>
@@ -30,6 +32,7 @@ export default function Seo(props: SeoProps) {
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
       <meta name="image" content={image} />
+      <meta name="keywords" content={keywords} />
 
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
