@@ -12,8 +12,10 @@ export const query = graphql`
       url
       githubUrl
       screenshots {
-        file {
-          url
+        resize(format: WEBP, width: 1000) {
+          src
+          width
+          height
         }
       }
     }
@@ -22,23 +24,8 @@ export const query = graphql`
 
 export default function project({ data }: SingleProjectType) {
   const project = data.contentfulProject;
-  const [lightboxController, setLightboxController] = React.useState({
-    toggler: false,
-    slide: 1,
-  });
 
   const siteUrl = `https://blobbo.netlify.app/projects/${project.slug}`;
-
-  const screenshots = project.screenshots.map(
-    (screenshot) => screenshot.file.url
-  );
-
-  function openLightboxOnSlide(number: number) {
-    setLightboxController({
-      toggler: !lightboxController.toggler,
-      slide: number,
-    });
-  }
 
   return (
     <Layout
@@ -73,20 +60,12 @@ export default function project({ data }: SingleProjectType) {
           <div className="flex flex-col items-center justify-center gap-5">
             {project.screenshots.map((screenshot, index) => (
               <img
-                className="cursor-pointer"
                 key={index}
-                src={screenshot.file.url}
+                src={screenshot.resize.src}
                 alt={project.title}
-                width="70%"
-                onClick={() => openLightboxOnSlide(index + 1)}
+                width="90%"
               />
             ))}
-
-            <FsLightbox
-              toggler={lightboxController.toggler}
-              sources={screenshots}
-              slide={lightboxController.slide}
-            ></FsLightbox>
           </div>
         </article>
       </section>

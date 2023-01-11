@@ -25,8 +25,8 @@ export default function categorySelect({ onCategoryChange }: any) {
   };
   return (
     <div className="flex items-center justify-center p-4">
-      <label className="mr-2 text-white">Filter by category:</label>
-      <select className="text-white bg-gray-800" onChange={handleChange}>
+      <label className="mr-2 text-slate-200">Filter by category:</label>
+      <select className="bg-gray-800 text-slate-200" onChange={handleChange}>
         <option value={""}>All</option>
         {data.allContentfulProject.distinct.map((project: any) => (
           <option key={project} value={project}>

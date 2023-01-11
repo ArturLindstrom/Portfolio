@@ -7,8 +7,10 @@ export interface ProjectType {
   url?: string;
   githubUrl: string;
   screenshots: {
-    file: {
-      url: string;
+    resize: {
+      src: string;
+      width: number;
+      height: number;
     };
   }[];
 }

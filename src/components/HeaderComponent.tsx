@@ -17,9 +17,9 @@ export default function HeaderComponent() {
     }
   `);
   return (
-    <header className="flex items-center justify-between p-4 text-white bg-primary h-[10vh] max-w-full">
+    <header className="flex items-center justify-between p-4 text-slate-200 bg-slate-900 h-[10vh] max-w-full">
       <Link to="/">
-        <h1 className="text-4xl font-bold hover:text-slate-900">Home</h1>
+        <h1 className="text-4xl font-bold hover:underline">Home</h1>
       </Link>
       <nav className="flex items-center justify-between space-x-4">
         <BurgerMenu />
