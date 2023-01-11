@@ -3,4 +3,5 @@ export interface SeoProps {
   description?: string;
   image?: string;
   siteUrl?: string;
+  keywords?: string;
 }
