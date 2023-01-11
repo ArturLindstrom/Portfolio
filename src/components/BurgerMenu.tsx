@@ -41,12 +41,14 @@ export default function BurgerMenu() {
 
   return (
     <div>
-      <span className="text-4xl cursor-pointer" onClick={toggleMenu}>
+      <span
+        className="text-4xl transition-all duration-300 cursor-pointer hover:text-slate-900"
+        onClick={toggleMenu}
+      >
         &#9776;
       </span>
       <div
         ref={sideMenu}
-        id="side-menu"
         className="fixed top-0 right-[-250px] w-[240px] h-screen z-50 bg-slate-800 p-5
       flex flex-col space-y-5 text-white duration-300"
       >
@@ -56,7 +58,7 @@ export default function BurgerMenu() {
         >
           &times;
         </span>
-
+        {/* looping out navLinks from contentful */}
         {navLinks.map((link: any) => (
           <Link
             className="transition-all duration-300 hover:text-primary"
@@ -67,6 +69,7 @@ export default function BurgerMenu() {
             {link.node.name}
           </Link>
         ))}
+        {/* looping out link to dynamic pages from contentful */}
         {data.allContentfulPage.edges.map((link: DynamicLinkType) => (
           <Link
             className="hover:text-primary"
