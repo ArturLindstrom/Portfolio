@@ -15,8 +15,10 @@ export const query = graphql`
           shortDescription
           category
           screenshots {
-            file {
-              url
+            resize(format: WEBP, width: 1440) {
+              width
+              height
+              src
             }
           }
         }
