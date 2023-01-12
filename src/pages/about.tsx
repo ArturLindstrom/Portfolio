@@ -32,11 +32,11 @@ export default function About({ data }: AboutType) {
       description="More information about me."
       siteUrl="https://blobbo.netlify.app/about"
     >
-      <section className="flex flex-col items-center w-2/3 p-6 rounded bg-slate-700">
+      <section className="flex flex-col items-center w-2/3 p-6 mb-4 rounded bg-slate-700">
         <h1 className="text-3xl text-slate-200">{about.title}</h1>
         {about.image ? (
           <img
-            className="w-[150px]"
+            className="w-[300px]"
             src={about.image.file.url}
             alt={about.title}
           />
