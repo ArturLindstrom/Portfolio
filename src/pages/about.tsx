@@ -41,7 +41,7 @@ export default function About({ data }: AboutType) {
             alt={about.title}
           />
         ) : null}
-        <div className="text-slate-200 [&>p]:mt-4">
+        <div className="text-slate-200 [&>p]:mt-4 [&>ol>li]:mt-4">
           {renderRichText(about.body)}
         </div>
       </section>

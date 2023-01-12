@@ -1,10 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-/* make header main and footer take up exactly 100vh */
+html {
+  background-color: rgb(15 23 42 / 100%);
+}
+
 * {
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 .text-focus-in {
