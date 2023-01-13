@@ -5,7 +5,7 @@ dotenv.config();
 const config: GatsbyConfig = {
   siteMetadata: {
     title: "Artur Lindströms Portfolio",
-    siteUrl: "https://blobbo.netlify.app/",
+    siteUrl: "https://arturlindstrom.netlify.app/",
     description: "Artur Lindströms Portfolio",
     image: "https://i.imgur.com/bCWUksE.png",
     keywords:
