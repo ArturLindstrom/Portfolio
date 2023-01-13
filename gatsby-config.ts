@@ -7,7 +7,7 @@ const config: GatsbyConfig = {
     title: "Artur Lindströms Portfolio",
     siteUrl: "https://blobbo.netlify.app/",
     description: "Artur Lindströms Portfolio",
-    image: "https://i.imgur.com/obDCG1x.png",
+    image: "https://i.imgur.com/bCWUksE.png",
     keywords:
       "Artur Lindström, Portfolio, Frontend, Developer, Web, Developer, Stockholm, Sweden, JavaScript, React, Gatsby, TypeScript, GraphQL, Node, HTML, CSS, SASS, PostCSS, Contentful, Netlify, Git, GitHub, GitLab, Bitbucket, Visual Studio Code, VSCode, WebStorm, IntelliJ, PHP, MySQL, MongoDB, Docker, Linux, Ubuntu, Windows, macOS, Mac, Apple, iPhone, iPad, Android, Mobile, Responsive, Design, UI, UX, User Interface, User Experience, Accessibility",
   },
