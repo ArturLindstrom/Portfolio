@@ -10,9 +10,11 @@ export interface frontPageType {
           };
           welcomeMessage: string;
           paragraph: string;
+          seoTitle: string;
+          seoDescription: string;
+          seoSiteUrl: string;
         };
       }[];
     };
   };
 }
-

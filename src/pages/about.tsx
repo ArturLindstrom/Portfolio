@@ -18,6 +18,9 @@ export const query = graphql`
               url
             }
           }
+          seoTitle
+          seoDescription
+          seoSiteUrl
         }
       }
     }
@@ -28,9 +31,9 @@ export default function About({ data }: AboutType) {
   const about = data.allContentfulAboutPage.edges[0].node;
   return (
     <Layout
-      title="About Me"
-      description="More information about me."
-      siteUrl="https://arturlindstrom.netlify.app/about"
+      title={about.seoTitle}
+      description={about.seoDescription}
+      siteUrl={about.seoSiteUrl}
     >
       <section className="flex flex-col items-center w-2/3 p-6 mb-4 rounded bg-slate-700">
         <h1 className="text-3xl text-slate-200">{about.title}</h1>

@@ -10,6 +10,9 @@ export interface PageType {
           url: string;
         };
       };
+      seoTitle: string;
+      seoDescription: string;
+      seoSiteUrl: string;
     };
   };
 }

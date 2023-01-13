@@ -19,6 +19,9 @@ export const query = graphql`
               url
             }
           }
+          seoTitle
+          seoDescription
+          seoSiteUrl
         }
       }
     }
@@ -38,9 +41,9 @@ export default function Contact({ data }: ContactType) {
   const links = data.allContentfulLink.edges;
   return (
     <Layout
-      title="Contact Page"
-      description="How to contact me."
-      siteUrl="https://arturlindstrom.netlify.app/contact"
+      title={contact.seoTitle}
+      description={contact.seoDescription}
+      siteUrl={contact.seoSiteUrl}
     >
       <section className="flex flex-col items-center w-2/3 p-6 mb-4 rounded bg-slate-700">
         <h1 className="text-3xl text-slate-200">{contact.title}</h1>

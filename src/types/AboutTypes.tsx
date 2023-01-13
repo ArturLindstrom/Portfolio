@@ -10,6 +10,9 @@ export interface AboutType {
               url: string;
             };
           };
+          seoTitle: string;
+          seoDescription: string;
+          seoSiteUrl: string;
         };
       }[];
     };

@@ -15,6 +15,9 @@ export const query = graphql`
           }
           welcomeMessage
           paragraph
+          seoTitle
+          seoDescription
+          seoSiteUrl
         }
       }
     }
@@ -24,7 +27,7 @@ export const query = graphql`
 export default function IndexPage({ data }: frontPageType) {
   const frontPage = data.allContentfulHomePage.edges[0].node;
   return (
-    <Layout>
+    <Layout title={frontPage.seoTitle} description={frontPage.seoDescription}>
       <section
         className="flex flex-col items-center justify-start min-h-[80vh] gap-5 bg-bottom bg-no-repeat bg-cover overflow-hidden w-full"
         style={{ backgroundImage: `url(${frontPage.heroImage.file.url})` }}

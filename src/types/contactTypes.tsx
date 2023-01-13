@@ -10,6 +10,9 @@ export interface ContactType {
               url: string;
             };
           };
+          seoTitle: string;
+          seoDescription: string;
+          seoSiteUrl: string;
         };
       }[];
     };

@@ -30,6 +30,9 @@ export interface AllprojectsType {
     allContentfulProject: {
       edges: {
         node: ProjectType;
+        seoTitle: string;
+        seoDescription: string;
+        seoSiteUrl: string;
       }[];
     };
   };
