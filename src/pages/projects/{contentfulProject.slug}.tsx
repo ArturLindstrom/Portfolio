@@ -25,7 +25,7 @@ export const query = graphql`
 export default function project({ data }: SingleProjectType) {
   const project = data.contentfulProject;
 
-  const siteUrl = `https://blobbo.netlify.app/projects/${project.slug}`;
+  const siteUrl = `https://arturlindstrom.netlify.app/projects/${project.slug}`;
 
   return (
     <Layout

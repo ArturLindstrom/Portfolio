@@ -30,7 +30,7 @@ export default function About({ data }: AboutType) {
     <Layout
       title="About Me"
       description="More information about me."
-      siteUrl="https://blobbo.netlify.app/about"
+      siteUrl="https://arturlindstrom.netlify.app/about"
     >
       <section className="flex flex-col items-center w-2/3 p-6 mb-4 rounded bg-slate-700">
         <h1 className="text-3xl text-slate-200">{about.title}</h1>
@@ -41,7 +41,7 @@ export default function About({ data }: AboutType) {
             alt={about.title}
           />
         ) : null}
-        <div className="text-slate-200 [&>p]:mt-4 [&>ol>li]:mt-4">
+        <div className="text-slate-200 [&>p]:mt-4 [&>ol>li]:mt-4 [&>h4]:text-xl [&>h4]:mt-4">
           {renderRichText(about.body)}
         </div>
       </section>

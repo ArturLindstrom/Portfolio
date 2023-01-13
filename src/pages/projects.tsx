@@ -43,7 +43,7 @@ export default function Projects({ data }: AllprojectsType) {
     <Layout
       title="My Projects"
       description="All my current projects"
-      siteUrl="https://blobbo.netlify.app/projects"
+      siteUrl="https://arturlindstrom.netlify.app/projects"
       image="https://i.imgur.com/Zb7C2v3.png"
     >
       <h1 className="mb-4 text-3xl font-bold text-center text-slate-200">

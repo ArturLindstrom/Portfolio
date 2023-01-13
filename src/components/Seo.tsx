@@ -28,6 +28,7 @@ export default function Seo(props: SeoProps) {
 
   return (
     <Helmet>
+      <html lang="en" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
