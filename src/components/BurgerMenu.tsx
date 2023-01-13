@@ -31,10 +31,17 @@ export default function BurgerMenu() {
     if (menuOpen !== true) {
       sideMenu?.current?.classList.remove("right-[-250px]");
       sideMenu?.current?.classList.add("right-0");
+      sideMenu?.current?.querySelectorAll("*").forEach((el) => {
+        el.setAttribute("tabindex", "0");
+      });
       setMenuOpen(!menuOpen);
     } else {
       sideMenu?.current?.classList.remove("right-0");
       sideMenu?.current?.classList.add("right-[-250px]");
+      sideMenu?.current?.querySelectorAll("*").forEach((el) => {
+        el.setAttribute("tabindex", "-1");
+      });
+
       setMenuOpen(!menuOpen);
     }
   }
@@ -55,6 +62,7 @@ export default function BurgerMenu() {
         <button
           className="text-4xl text-right cursor-pointer"
           onClick={() => toggleMenu()}
+          tabIndex={-1}
         >
           &times;
         </button>
@@ -65,6 +73,7 @@ export default function BurgerMenu() {
             to={link.node.path}
             key={link.node.name}
             onClick={toggleMenu}
+            tabIndex={-1}
           >
             {link.node.name}
           </Link>
@@ -75,6 +84,7 @@ export default function BurgerMenu() {
             className="hover:text-primary hover:underline"
             to={`/${link.node.slug}`}
             key={link.node.slug}
+            tabIndex={-1}
           >
             {link.node.title}
           </Link>
