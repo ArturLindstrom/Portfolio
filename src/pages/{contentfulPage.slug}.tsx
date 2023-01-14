@@ -23,9 +23,10 @@ export const query = graphql`
 
 export default function page({ data }: PageType) {
   const page = data.contentfulPage;
+  const siteUrl = `https://arturlindstrom.netlify.app/${page.slug}`;
 
   return (
-    <Layout>
+    <Layout title={page.title} siteUrl={siteUrl}>
       <section className="flex flex-col items-center w-2/3 p-6 rounded bg-slate-700">
         <h1 className="text-3xl text-slate-200">{page.title}</h1>
         {page.image ? <img src={page.image.file.url} alt={page.title} /> : null}

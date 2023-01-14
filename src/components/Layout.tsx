@@ -1,6 +1,4 @@
-import { title } from "process";
 import * as React from "react";
-import { SeoProps } from "../types/SeoTypes";
 import FooterComponent from "./FooterComponent";
 import HeaderComponent from "./HeaderComponent";
 import Seo from "./Seo";
@@ -29,7 +27,7 @@ export default function Layout({
         siteUrl={siteUrl}
       />
       <HeaderComponent />
-      <main className=" min-h-[80vh] bg-slate-900 pt-6 flex flex-col items-center">
+      <main className=" min-h-[80vh] bg-slate-900  flex flex-col items-center">
         {children}
       </main>
       <FooterComponent />
