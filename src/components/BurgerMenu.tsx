@@ -28,6 +28,12 @@ export default function BurgerMenu() {
   const navLinks = data.allContentfulNavLink.edges;
 
   function toggleMenu() {
+    // adding or removing tailwind class depending on the state of menuOpen
+    // also adding or removing tabindex depending on the state of menuOpen
+    // this is to make sure that the menu is accessible
+    // when the menu is open, the links are focusable
+    // when the menu is closed, the links are not focusable
+
     if (menuOpen !== true) {
       sideMenu?.current?.classList.remove("right-[-250px]");
       sideMenu?.current?.classList.add("right-0");
@@ -41,7 +47,6 @@ export default function BurgerMenu() {
       sideMenu?.current?.querySelectorAll("*").forEach((el) => {
         el.setAttribute("tabindex", "-1");
       });
-
       setMenuOpen(!menuOpen);
     }
   }

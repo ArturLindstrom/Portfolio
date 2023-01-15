@@ -47,6 +47,12 @@ const config: GatsbyConfig = {
       __key: "images",
     },
     {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/pixelArt.svg",
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",

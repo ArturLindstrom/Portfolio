@@ -21,8 +21,10 @@ export default function categorySelect({
   `);
 
   const [category, setCategory] = React.useState<string>();
-
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    // get the value of the selected option
+    // and pass it to the onCategoryChange function
+    // which is emitted to the parent component to filter the projects
     const value = event.target.value;
     setCategory(value);
     onCategoryChange(value);

@@ -19,7 +19,7 @@ export default function Seo(props: SeoProps) {
   `);
 
   const defaults = data.site.siteMetadata;
-
+  // if component props are passed in, use them, otherwise use defaults from siteMetadata
   const title = props.title || defaults.title;
   const description = props.description || defaults.description;
   const image = props.image || defaults.image;
@@ -28,19 +28,20 @@ export default function Seo(props: SeoProps) {
 
   return (
     <Helmet>
+      {/* standard SEO */}
       <html lang="en" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
       <meta name="image" content={image} />
       <meta name="keywords" content={keywords} />
-
+      {/* Facebook */}
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-
+      {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@gatsbyjs" />
       <meta name="twitter:title" content={title} />

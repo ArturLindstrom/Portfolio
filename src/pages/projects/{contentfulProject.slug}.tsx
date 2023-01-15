@@ -2,7 +2,6 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import { SingleProjectType } from "../../types/projectTypes";
 import Layout from "../../components/Layout";
-import FsLightbox from "fslightbox-react";
 export const query = graphql`
   query ($id: String!) {
     contentfulProject(id: { eq: $id }) {
@@ -24,9 +23,7 @@ export const query = graphql`
 
 export default function project({ data }: SingleProjectType) {
   const project = data.contentfulProject;
-
   const siteUrl = `https://arturlindstrom.netlify.app/projects/${project.slug}`;
-
   return (
     <Layout
       title={project.title}
