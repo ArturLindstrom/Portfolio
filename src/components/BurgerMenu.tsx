@@ -56,6 +56,7 @@ export default function BurgerMenu() {
       <button
         className="text-4xl transition-all duration-300 cursor-pointer"
         onClick={toggleMenu}
+        aria-label="Open menu"
       >
         &#9776;
       </button>
@@ -68,6 +69,7 @@ export default function BurgerMenu() {
           className="text-4xl text-right cursor-pointer"
           onClick={() => toggleMenu()}
           tabIndex={-1}
+          aria-label="Close menu"
         >
           &times;
         </button>

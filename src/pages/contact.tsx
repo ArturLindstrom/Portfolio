@@ -54,7 +54,7 @@ export default function Contact({ data }: ContactType) {
             alt={contact.title}
           />
         ) : null}
-        <div className="text-slate-200 [&>p]:mt-4">
+        <div className="text-slate-200 [&>p]:mt-4 [&>p>a]:text-primary">
           {renderRichText(contact.body)}
         </div>
         <div className="flex items-center gap-4 mt-4">
