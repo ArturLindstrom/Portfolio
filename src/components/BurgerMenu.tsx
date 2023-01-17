@@ -81,7 +81,7 @@ export default function BurgerMenu() {
             key={link.node.name}
             onClick={toggleMenu}
             tabIndex={-1}
-            activeClassName="text-primary"
+            activeClassName="text-primary underline"
           >
             {link.node.name}
           </Link>
@@ -93,7 +93,7 @@ export default function BurgerMenu() {
             to={`/${link.node.slug}`}
             key={link.node.slug}
             tabIndex={-1}
-            activeClassName="text-primary"
+            activeClassName="text-primary underline"
           >
             {link.node.title}
           </Link>
