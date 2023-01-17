@@ -35,7 +35,7 @@ export default function Seo(props: SeoProps) {
       <link rel="canonical" href={url} />
       <meta name="image" content={image} />
       <meta name="keywords" content={keywords} />
-      {/* Facebook */}
+      {/* social media */}
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />

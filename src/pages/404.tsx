@@ -10,7 +10,7 @@ export default function NotFoundPage() {
         <p className="text-2xl font-semibold text-slate-200">Page not found</p>
         <Link
           to="/"
-          className="mt-4 text-5xl font-bold text-slate-200 underline"
+          className="mt-4 text-5xl font-bold underline text-slate-200"
         >
           Back To Home
         </Link>
